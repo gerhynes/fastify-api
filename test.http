@@ -11,3 +11,6 @@ Content-Type: application/json
 {
   "name": "New Item"
 }
+
+### DELETE ITEM
+DELETE  http://localhost:5000/items/3 HTTP/1.1
