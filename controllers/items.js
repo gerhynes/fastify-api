@@ -24,6 +24,17 @@ const addItem = (req, reply) => {
   reply.code(201).send(item);
 };
 
+const updateItem = (req, reply) => {
+  const { id } = req.params;
+  const { name } = req.body;
+
+  items = items.map((item) => (item.id === id ? { id, name } : item));
+
+  item = items.find((item) => item.id === id);
+
+  reply.send(item);
+};
+
 const deleteItem = (req, reply) => {
   const { id } = req.params;
 
@@ -35,5 +46,6 @@ module.exports = {
   getItems,
   getItem,
   addItem,
+  updateItem,
   deleteItem
 };
